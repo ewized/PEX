@@ -178,7 +178,6 @@ public abstract class PermissionEntity {
 	 * Remove permission in world
 	 *
 	 * @param permission Permission to remove
-	 * @param world      World name to remove permission for
 	 */
 	public void removePermission(String permission, String worldName) {
 		throw new UnsupportedOperationException("You shouldn't call this method");
@@ -314,7 +313,6 @@ public abstract class PermissionEntity {
 	/**
 	 * Set option for all worlds. Can be overwritten by world specific option
 	 *
-	 * @param option Option name
 	 * @param value  Value to set, null to remove
 	 */
 	public void setOption(String permission, String value) {

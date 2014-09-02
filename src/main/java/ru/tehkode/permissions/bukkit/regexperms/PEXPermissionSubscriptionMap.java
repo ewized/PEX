@@ -1,6 +1,7 @@
 package ru.tehkode.permissions.bukkit.regexperms;
 
 import com.google.common.collect.Sets;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permissible;
 import org.bukkit.plugin.PluginManager;
@@ -163,8 +164,8 @@ public class PEXPermissionSubscriptionMap extends HashMap<String, Map<Permissibl
 
 		@Override
 		public Set<Permissible> keySet() {
-			Player[] players = plugin.getServer().getOnlinePlayers();
-			Set<Permissible> pexMatches = new HashSet<Permissible>(players.length);
+			Collection<? extends Player> players = Bukkit.getOnlinePlayers();
+			Set<Permissible> pexMatches = new HashSet<Permissible>(players.size());
 			for (Player player : players) {
 				if (player.hasPermission(permission)) {
 					pexMatches.add(player);

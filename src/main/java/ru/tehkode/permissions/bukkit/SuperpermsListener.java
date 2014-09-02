@@ -1,5 +1,6 @@
 package ru.tehkode.permissions.bukkit;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -146,7 +147,7 @@ public class SuperpermsListener implements Listener {
 				return;
 			}
 
-			for (Player p : plugin.getServer().getOnlinePlayers()) {
+			for (Player p : Bukkit.getOnlinePlayers()) {
 				updateAttachment(p);
 			}
 		} catch (Throwable t) {

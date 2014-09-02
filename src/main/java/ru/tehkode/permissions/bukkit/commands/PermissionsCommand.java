@@ -92,7 +92,7 @@ public abstract class PermissionsCommand implements CommandListener {
 		List<String> players = new LinkedList<String>();
 
 		// Collect online Player names
-		for (Player player : Bukkit.getServer().getOnlinePlayers()) {
+		for (Player player : Bukkit.getOnlinePlayers()) {
 			if (player.getName().equalsIgnoreCase(playerName)) {
 				return player.getName();
 			}

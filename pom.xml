@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.tehkode</groupId>
     <artifactId>PermissionsEx</artifactId>
-    <version>1.19.6</version>
+    <version>1.19.6-HACK</version>
     <name>PermissionsEx</name>
     <url>https://github.com/PEXPlugins/PermissionsEx</url>
     <properties>
@@ -63,17 +63,20 @@
                 <configuration>
                     <preparationGoals>assembly:assembly</preparationGoals>
                     <goals>assembly:assembly</goals>
-                    <tagNameFormat>STABLE-@{project.version}</tagNameFormat>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.4.7-R1.1-SNAPSHOT</version>
-            <type>jar</type>
+            <groupId>tc.oc</groupId>
+            <artifactId>sportbukkit</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>tc.oc</groupId>
+            <artifactId>sportbukkit-api</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>

@@ -1,5 +1,6 @@
 package ru.tehkode.permissions.bukkit.regexperms;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -33,7 +34,7 @@ public class RegexPermissions {
 			new PermissibleInjector.ClassNameRegexPermissibleInjector("org.getspout.spout.player.SpoutCraftPlayer", "perm", false, "org\\.getspout\\.spout\\.player\\.SpoutCraftPlayer"),
 			new PermissibleInjector.ServerNamePermissibleInjector(getCBClassName("entity.CraftHumanEntity"), "perm", true, "CraftBukkit"),
 			new PermissibleInjector.ServerNamePermissibleInjector(getCBClassName("entity.CraftHumanEntity"), "perm", true, "CraftBukkit++"),
-			new PermissibleInjector.ServerNamePermissibleInjector(getCBClassName("entity.CraftHumanEntity"), "perm", true, "SportBukkit")
+			new PermissibleInjector.ServerNamePermissibleInjector(getCBClassName("entity.CraftHumanEntity"), "perm", true, "FireCast")
 	};
 
 	public void onEnable() {
@@ -95,7 +96,7 @@ public class RegexPermissions {
 	}
 
 	private void injectAllPermissibles() {
-		for (Player player : plugin.getServer().getOnlinePlayers()) {
+		for (Player player : Bukkit.getOnlinePlayers()) {
 			injectPermissible(player);
 		}
 	}
@@ -130,7 +131,7 @@ public class RegexPermissions {
 	}
 
 	private void uninjectAllPermissibles() {
-		for (Player player : plugin.getServer().getOnlinePlayers()) {
+		for (Player player : Bukkit.getOnlinePlayers()) {
 			injectPermissible(player);
 		}
 	}
