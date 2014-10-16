@@ -144,11 +144,11 @@ public class PermissiblePEX extends PermissibleBase {
 	private PermissionCheckResult checkSingle(String expression, String permission, boolean value) {
 		if (plugin.getPermissionsManager().getPermissionMatcher().isMatches(expression, permission)) {
 			PermissionCheckResult res = PermissionCheckResult.fromBoolean(value);
-			if (plugin.isDebug()) {
+			/*if (plugin.isDebug()) {
 				plugin.getLogger().info("User " + player.getName() +
 						" checked for permission '" + permission + "', regex-matched a value of "
 						+ res + " from " + expression + " (CACHE MISS)");
-			}
+			}*/
 			return res;
 		}
 		return PermissionCheckResult.UNDEFINED;
@@ -177,14 +177,14 @@ public class PermissiblePEX extends PermissibleBase {
 				for (Map.Entry<String, Boolean> ent : plugin.getRegexPerms().getPermissionList().getParents(permission)) {
 						if ((res = permissionValue(ent.getKey())) != PermissionCheckResult.UNDEFINED) {
 							res = PermissionCheckResult.fromBoolean(!(res.toBoolean() ^ ent.getValue()));
-							plugin.getLogger().info("User " + player.getName() + " checked for permission '" + permission + "', match from parent '" + ent.getKey() + "' (CACHE MISS)");
+							//plugin.getLogger().info("User " + player.getName() + " checked for permission '" + permission + "', match from parent '" + ent.getKey() + "' (CACHE MISS)");
 							break;
 						}
 					}
 			}
 			cache.put(permission, res);
 			if (res == PermissionCheckResult.UNDEFINED) {
-				plugin.getLogger().info("User " + player.getName() + " checked for permission '" + permission + "', no match found (CACHE MISS)");
+				//plugin.getLogger().info("User " + player.getName() + " checked for permission '" + permission + "', no match found (CACHE MISS)");
 			}
 			LAST_CALL_ERRORED.set(false);
 			return res;
